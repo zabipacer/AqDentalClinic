@@ -11,6 +11,7 @@ import LocalSEOSection from './components/LocalMAp'
 import FaqAccordion from './components/FAQS'
 import Footer from './components/Footer'
 import TestimonialsA from './components/ApiTestimonial'
+import AboutSection from './components/Why'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +21,7 @@ function App() {
 <HeroSection/>
 
 <FeaturedServices/>
-<WhyChooseUs/>
+<AboutSection/>
 
 <Testimonials/>
 <LocalSEOSection/>

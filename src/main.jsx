@@ -1,11 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import "./index.css";
-// The layout with Navbar and Footer
-import App from "./App"; // The home page
- // Species detail page
+
+import App from "./App";
 import Layout from "./Layout";
 import TeethScalingPolishingPage from "./pages/Polishing";
 import FluorideTreatment from "./pages/Fluoride";
@@ -28,104 +26,28 @@ import BookingSection from "./pages/booking";
 
 const router = createBrowserRouter([
   {
-    path: "/", 
-    element: <Layout />, // Always show Layout (with Navbar & Footer)
+    path: "/",
+    element: <Layout />,
     children: [
-      {
-        path: "/", // Home route
-        element: <App />, // Show App component in the Layout
-      },
-  {
-    path: "/scaling-and-polishing-in-faisalabad", // Home route
-    element: <TeethScalingPolishingPage />, // Show App component in the Layout
-
-  },
-
-  {
-    path: "/Fluoride-Treatment-in-faisalabad", // Home route
-    element: <FluorideTreatment />, // Show App component in the Layout
-
-  },
-  {
-    path: "/Teeth-whitening-in-faisalabad", // Home route
-    element: <TeethWhiteningPage />, // Show App component in the Layout
-
-  },
-  {
-    path: "/Smile-Makeover-faisalabad", // Home route
-    element: <SmileMakeoverLandingPage />, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/veneers-faisalabad", // Home route
-    element: <DentalVeneersPage />, // Show App component in the Layout
-
-  },
-  {
-    path: "/Dental-Fillings-faisalabad", // Home route
-    element: <DentalFillingsLandingPage />, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/Dental-Crown-Bridges-Faisalabad", // Home route
-    element: <DentalCrownsBridgesLandingPage />, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/Dental-implants-Faisalabad", // Home route
-    element: <DentalImplantsLandingPage />, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/braces-aligners-faisalabad", // Home route
-    element: <BracesAndAlignersLandingPage/>, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/root-canal-faisalabad", // Home route
-    element: <RootCanalLandingPage/>, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/wisdom-tooth-extraction", // Home route
-    element: <WisdomToothExtractionLandingPage/>, // Show App component in the Layout
-
-  },
-  {
-    path: "/kids-dentist-faisalabad", // Home route
-    element: <PediatricDentistryLandingPage/>, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/gum-disease-treatment", // Home route
-    element: <GumDiseaseTreatment/>, // Show App component in the Layout
-
-  },
-  {
-    path: "/emergency-dentist-faisalabad", // Home route
-    element: <EmergencyDentistFaisalabad/>, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/maxillofacial-surgery", // Home route
-    element: <MaxillofacialSurgeryFaisalabad/>, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/tmj-treatment-faisalabad", // Home route
-    element: <TMJTreatmentFaisalabad/>, // Show App component in the Layout
-
-  }, 
-  {
-    path: "/dental-checkup-faisalabad", // Home route
-    element: <DentalCheckupLandingPage/>, // Show App component in the Layout
-
-  },
-  {
-    path: "/booking", // Home route
-    element: <BookingSection/>, // Show App component in the Layout
-
-  },  // Add more routes here as needed
+      { path: "/", element: <App /> },
+      { path: "/scaling-and-polishing-in-faisalabad", element: <TeethScalingPolishingPage /> },
+      { path: "/Fluoride-Treatment-in-faisalabad", element: <FluorideTreatment /> },
+      { path: "/Teeth-whitening-in-faisalabad", element: <TeethWhiteningPage /> },
+      { path: "/Smile-Makeover-faisalabad", element: <SmileMakeoverLandingPage /> },
+      { path: "/veneers-faisalabad", element: <DentalVeneersPage /> },
+      { path: "/Dental-Fillings-faisalabad", element: <DentalFillingsLandingPage /> },
+      { path: "/Dental-Crown-Bridges-Faisalabad", element: <DentalCrownsBridgesLandingPage /> },
+      { path: "/Dental-implants-Faisalabad", element: <DentalImplantsLandingPage /> },
+      { path: "/braces-aligners-faisalabad", element: <BracesAndAlignersLandingPage /> },
+      { path: "/root-canal-faisalabad", element: <RootCanalLandingPage /> },
+      { path: "/wisdom-tooth-extraction", element: <WisdomToothExtractionLandingPage /> },
+      { path: "/kids-dentist-faisalabad", element: <PediatricDentistryLandingPage /> },
+      { path: "/gum-disease-treatment", element: <GumDiseaseTreatment /> },
+      { path: "/emergency-dentist-faisalabad", element: <EmergencyDentistFaisalabad /> },
+      { path: "/maxillofacial-surgery", element: <MaxillofacialSurgeryFaisalabad /> },
+      { path: "/tmj-treatment-faisalabad", element: <TMJTreatmentFaisalabad /> },
+      { path: "/dental-checkup-faisalabad", element: <DentalCheckupLandingPage /> },
+      { path: "/booking", element: <BookingSection /> },
     ],
   },
 ]);

@@ -48,10 +48,10 @@ export default function AQDentalHero() {
     <motion.section
       ref={containerRef}
       className="relative min-h-screen overflow-hidden py-16 flex items-center justify-center text-center"
-      style={!isMobile ? { y, opacity } : {}}
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+      style={!isMobile ? { y, opacity } : { opacity: 1 }}
+      variants={!isMobile ? containerVariants : {}}
+      initial={!isMobile ? "hidden" : false}
+      animate={!isMobile ? "visible" : false}
     >
       {/* Background Video */}
       <video
@@ -64,32 +64,48 @@ export default function AQDentalHero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent z-0" />
+      {/* Gradient Overlay - Much darker on mobile */}
+      <div className={`absolute inset-0 z-0 ${
+        isMobile 
+          ? 'bg-gradient-to-b from-black via-black/90 to-black/70' 
+          : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent'
+      }`} />
+      
+      {/* Additional dark overlay for mobile only */}
+      {isMobile && (
+        <div className="absolute inset-0 bg-black/20 z-0" />
+      )}
 
-      <motion.div className="relative z-10 max-w-3xl px-6 space-y-6" variants={itemVariants}>
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
+      <motion.div 
+        className="relative z-10 max-w-3xl px-6 space-y-6" 
+        variants={!isMobile ? itemVariants : {}}
+      >
+        <h1 className={`text-4xl md:text-6xl font-bold leading-tight ${
+          isMobile ? 'text-white drop-shadow-2xl' : 'text-white'
+        }`}>
           <span className="block">Excellence in</span>
-          <span className="block  text-white text-stroke-white ">
+          <span className="block text-white text-stroke-white">
             Dental Care
           </span>
         </h1>
-        <p className="text-lg text-white max-w-xl mx-auto">
+        <p className={`text-lg max-w-xl mx-auto ${
+          isMobile ? 'text-gray-100 drop-shadow-lg' : 'text-white'
+        }`}>
           Experience warm, modern dental services at AQ Dental Clinic & Associates in Quetta. From routine cleanings to advanced implants, we craft perfect smiles.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <motion.button
             className="px-8 py-4 bg-[#5e3b1f] text-white font-semibold rounded-xl shadow-lg"
-            whileHover={{ scale: 1.05, backgroundColor: '#3a2412' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            whileHover={!isMobile ? { scale: 1.05, backgroundColor: '#3a2412' } : {}}
+            transition={!isMobile ? { type: 'spring', stiffness: 300, damping: 20 } : {}}
             onClick={() => window.open('tel:03323811434')}
           >
             Book Appointment
           </motion.button>
           <motion.button
             className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold transition"
-            whileHover={{ scale: 1.05, backgroundColor: 'white', color: '#5e3b1f' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            whileHover={!isMobile ? { scale: 1.05, backgroundColor: 'white', color: '#5e3b1f' } : {}}
+            transition={!isMobile ? { type: 'spring', stiffness: 300, damping: 20 } : {}}
             onClick={() => {
               const section = document.getElementById('services');
               if (section) section.scrollIntoView({ behavior: 'smooth' });

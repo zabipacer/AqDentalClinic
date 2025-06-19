@@ -11,6 +11,7 @@ import FaqAccordion from './components/FAQS'
 
 import AboutSection from './components/Why'
 import TransformationGallery from './components/Gallery'
+import ClinicCarousel from './components/Clinicimages'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
 <FeaturedServices/>
 <AboutSection/>
 <TransformationGallery/>
+<ClinicCarousel/>
 <Testimonials/>
 <LocalSEOSection/>
 <FaqAccordion/>

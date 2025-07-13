@@ -112,7 +112,7 @@ export default function AboutSection() {
             {[
               { icon: MapPin, text: '52VC+JG9, Alamdar Road, Quetta', color: 'from-blue-700 to-amber-500', prop: 'address' },
               { icon: Phone, text: '0332 3811434', color: 'from-amber-500 to-yellow-600', link: 'tel:+923323811434', prop: 'telephone' },
-              { icon: Clock, text: 'Mon-Sat: 10am - 9pm', color: 'from-blue-700 to-amber-500', prop: 'openingHours' },
+              { icon: Clock, text: 'Mon-Sat: 5pm - 9pm', color: 'from-blue-700 to-amber-500', prop: 'openingHours' },
               { icon: Star, text: '5.0 ★ (6 reviews)', color: 'from-amber-500 to-yellow-600', prop: 'aggregateRating' },
             ].map((item, i) => (
               <motion.div
